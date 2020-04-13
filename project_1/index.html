@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>My character !</title>
+</head>
+<body>
+  <main>
+    <article>
+      <button id='show_char' type='submit' class="btn">Show default Char
+      </button>
+
+      <h1>My character (if I accept) : <span id="name"></span></h1>
+      <h2>Class : <span id="race"></span></h1>
+
+      <p>Lifepoints : <span class="hp"></span>HP</p>
+      <p class="mana">Mana : <span></span>mana</p>
+      <p>Damages : <b></b>dmg</p>
+    </article>
+    <form id='compose_char_zone' action="">
+      <p>Otherwise, compose my own</p>
+      <div>
+        <label for="customized_name">customized char name:</label>
+        <input id="new_name" name="customized_name" type="text">
+      </div>
+
+      <div>
+        <label for="customized_hp">customized char hp:</label>
+        <input id="new_hp" name="customized_hp" type="number" min=1 step=1 >
+      </div>
+
+      <div>
+        <label for="customized_dmg">customized char dmg:</label>
+        <input id="new_dmg" name="customized_dmg" type="number" min=1 step=1>
+      </div>
+
+      <div>
+        <label for="customized_mana">customized char mana:</label>
+        <input id="new_mana" name="customized_mana" type="number" min=0 step=10>
+      </div>
+
+      <button id='change_char' type='submit' class="btn">Show my new Char
+      </button>
+    </form>
+  </main>
+  <script src="character.js"></script>
+  <script src="paladin.js"></script>
+  <script src="index.js"></script>
+
+</body>
+</html>
