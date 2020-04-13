@@ -1,0 +1,17 @@
+* {
+  cursor: none !important;
+}
+
+#custom_cursor {
+  visibility: hidden ; 
+  /* otherwise div will be visible at page load*/  
+  height: 20px;
+  width: 20px;
+  /*div without size is invisible*/
+  background-color: rgba(161, 212, 201, 0.6);
+  border-radius: 50%;
+  position: absolute;
+  /*so that to set coords in JS*/
+  pointer-events: none;
+  /*otherwise you always click on the cursor div*/
+}
