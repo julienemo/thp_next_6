@@ -52,4 +52,12 @@ class Character {
 	dealDamage = (victim) => {
 		this.attackVictim(this.dmg, victim);
 	}
+
+	displayInformation = (nameField, raceField, hpField, dmgField, manaField) => {
+		nameField.innerHTML = this.name;
+		raceField.innerHTML = this.constructor.name;
+		hpField.innerHTML = this.hp;
+		dmgField.innerHTML = this.dmg;
+		manaField.innerHTML = this.mana;
+	}
 }
