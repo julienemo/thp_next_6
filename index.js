@@ -55,3 +55,48 @@ document.addEventListener('mousemove', e => {
   newCursor.style.top = `${e.pageY - 10}px`;
   newCursor.style.left = `${e.pageX - 10}px`;
 })
+
+// cursor changes according to mouse event on picture
+const draggableImg = document.getElementById('char_img');
+const openHandCursor = () => {
+  newCursor.style.backgroundImage = 'url("openhand.png")';
+}
+const resetCursor = () => {
+  newCursor.style.backgroundImage = 'url("")';
+}
+draggableImg.addEventListener('mouseover', openHandCursor);
+draggableImg.addEventListener('mouseleave', resetCursor);
+
+// draggable picture
+draggableImg.onmousedown = function(event) {
+  draggableImg.style.position = 'absolute';
+
+  const moveAction = (e) => {
+    newCursor.style.backgroundImage = 'url("fist.png")';
+    draggableImg.style.left = e.pageX - draggableImg.offsetWidth / 2 + 'px';
+    draggableImg.style.top = e.pageY - draggableImg.offsetHeight / 2 + 'px';
+    // this whole offset thing is quite important
+    // it ensures that the cursor is in the middle of the element when dragging
+  }
+
+  const stopAction = (e) => {
+    newCursor.style.backgroundImage = 'url("openhand.png")';
+    document.removeEventListener('mousemove', moveAction);
+    draggableImg.onmouseup = null;
+  }
+
+  document.addEventListener('mousemove', moveAction);
+  // could have simply done document.onmousemove = moveAction;
+  // BUT, since later we are removing the eventListener of mousemove
+  // its event need to be added with an eventListener
+  // otherwise there is nothing to remove
+
+  document.onmouseup = stopAction;
+};
+
+draggableImg.ondragstart = function() {
+  return false; 
+  // this is to prevent a default behaviour when dragging
+  // element makes a semi-transparent duplicate
+  // moves with a fist cursor
+};

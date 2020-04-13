@@ -3,6 +3,7 @@
 }
 
 #custom_cursor {
+  z-index: 1000;
   visibility: hidden ; 
   /* otherwise div will be visible at page load*/  
   height: 20px;
@@ -14,4 +15,16 @@
   /*so that to set coords in JS*/
   pointer-events: none;
   /*otherwise you always click on the cursor div*/
+}
+
+#char_img{
+  height: 100px;
+  width: 100px;
+  background-image: url('img.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+#char_img:hover{
+  cursor: grab;
 }
