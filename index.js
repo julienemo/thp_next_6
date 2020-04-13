@@ -27,6 +27,8 @@ const btnChangeChar = document.getElementById('change_char');
 btnChangeChar.addEventListener('click', function(e) {
   e.preventDefault();
 
+  btnShowChar.style.display = 'none';
+
   const newName = document.getElementById('new_name')
                           .value || myChar.name;
   const newHp = document.getElementById('new_hp')
