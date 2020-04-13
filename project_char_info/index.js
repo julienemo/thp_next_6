@@ -20,9 +20,7 @@ btnChangeChar.addEventListener('click', function(e) {
   const newHp = document.getElementById('new_hp').value || myChar.hp;
   const newDmg = document.getElementById('new_dmg').value || myChar.dmg;
   const newMana = document.getElementById('new_mana').value || myChar.mana;
-  myChar.name = newName;
-  myChar.hp = newHp;
-  myChar.dmg = newDmg;
-  myChar.mana = newMana;
+  
+  myChar.update(newName, newHp, newDmg, newMana);
   myChar.displayInformation(charName, charRace, charHp, charDmg, charMana);
 });

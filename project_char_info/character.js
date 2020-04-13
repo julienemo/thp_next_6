@@ -60,4 +60,11 @@ class Character {
 		dmgField.innerHTML = this.dmg;
 		manaField.innerHTML = this.mana;
 	}
+
+	update = (name = this.name, hp = this.hp, dmg = this.dmg, mana = this.mana) => {
+		this.name = name;
+		this.hp = hp;
+		this.dmg = dmg;
+		this.mana = mana
+	}
 }
